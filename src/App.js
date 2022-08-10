@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from './Pages/Home'
 import Contact from './Pages/Contact'
 import About from "./Pages/About";
@@ -8,29 +8,18 @@ import './App.css';
 import ProtectedRoutes from "./ProtectedRoutes";
 import SignIn from "./Pages/SignIn";
 import Api from "./Pages/Api";
+import NavBar from "./NavBar";
 
 const App = () => {
   return (
     <div className="App">
-      <div className="display">
-      <li>
-        <Link className="nav-linke" to="/home"> Home </Link>
-      </li>
-      <li>
-        <Link className="nav-linke" to="About"> About </Link>
-      </li>
-      <li >
-        <Link className="nav-linke" to="Contact"> Contact </Link>
-      </li>
-      <li >
-        <Link className="nav-linke" to="ProfileInfo"> Profile </Link>
-      </li>
-      </div>
+      <NavBar />
       <br />
       <br />
       <br />
       <Routes>
-        <Route exact path='/home' element={<Home />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/signin' element={<SignIn />} />
